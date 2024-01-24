@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Page Title</title>
+    <style>
+        body {
+            background-color: lightslategrey;
+        }
+
+        .name {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .outer-div {
+            text-align: center;
+            margin: 50px auto;
+            height: 340px;
+            width: 1200px;
+            background-color: gray;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+        }
+
+        .inner-div {
+            width: 300px;
+            height: 300px;
+            background-color: darksalmon;
+            line-height: 100px;
+            text-align: center;
+            line-height: 20px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .inner-div input {
+            margin-top: 10px;
+        }
+
+        .inner-div button {
+            margin-top: 10px;
+        }
+
+        .inner-div p {
+            margin: 0;
+        }
+
+        .email-link {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main header which includes my name -->
+    <div class="name">
+        <h1>Ilyas Tahari</h1>
+    </div>
+
+    <!-- Work experience -->
+    <div class="outer-div">
+        <div class="inner-div">
+            <h3>Other Pages</h3>
+            <p>
+                <!-- Links to the different pages of my resume -->
+                <a href="workExperience.html">Work Experience</a><br><br>
+                <a href="educationalExperience.html">Educational Experience</a><br><br>
+                <a href="AwardsAndSkills.html">Awards and Skills</a><br><br>
+                <a href="salaryCalculator.html">Salary Calculator</a>
+            </p>
+        </div>
+        <div class="inner-div">
+            <h3>Veiled Collection</h3>
+            <p>
+                <br> Years: 2021-2022
+            </p>
+
+            <input type="number" id="veiledInput" placeholder="Enter number of job duties">
+
+            <button onclick="displayVeiledJobDuties()">Display Job Duties</button>
+
+            <div id="veiledOutput" style="white-space: pre-line;"></div>
+
+            <script>
+                var veiledJobDuties = [
+                    "Fulfillment Associate",
+                    "Stock Clerk",
+                    "Stocker",
+                    "Receiving Associate",
+                    "Material Handler"
+                ];
+
+                function displayVeiledJobDuties() {
+                    var numberOfJobDuties = document.getElementById('veiledInput').value;
+
+                    var startIndex = numberOfJobDuties - 1;
+
+                    var concatenatedValues = "";
+
+                    while (startIndex >= 0 && startIndex < veiledJobDuties.length) {
+                        concatenatedValues += veiledJobDuties[startIndex] + "<br>";
+
+                        startIndex--;
+                    }
+                    document.getElementById('veiledOutput').innerHTML = concatenatedValues;
+                }
+            </script>
+                        <!-- Link to my email address -->
+                <div class="email-link">
+                    <a href="mailto:itahari03@gmail.com">Email me here!</a>
+                </div>
+
+        </div>
+        <div class="inner-div">
+            <h3>Al-Hidaya Center</h3>
+            <p>
+                <br> Years: 2021-Present
+            </p>
+
+            <input type="number" id="hidayaInput" placeholder="Enter number of job duties">
+
+            <button onclick="displayHidayaJobDuties()">Display Job Duties</button>
+
+            <div id="hidayaOutput" style="white-space: pre-line;"></div>
+
+            <script>
+                var hidayaJobDuties = [
+                    "Teacher",
+                    "Mentor",
+                    "TA",
+                    "Camp Counselor",
+                    "Chaperone"
+                ];
+
+                function displayHidayaJobDuties() {
+                    var numberOfJobDuties = document.getElementById('hidayaInput').value;
+
+                    var startIndex = numberOfJobDuties - 1;
+
+                    var concatenatedValues = "";
+
+                    while (startIndex >= 0 && startIndex < hidayaJobDuties.length) {
+                        concatenatedValues += hidayaJobDuties[startIndex] + "<br>";
+
+                        startIndex--;
+                    }
+                    document.getElementById('hidayaOutput').innerHTML = concatenatedValues;
+                }
+            </script>
+        </div>
+    </div>
+
+</body>
+
+</html>
